@@ -1,0 +1,25 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on jbltx&#39;s blog</title>
+        <link>https://jbltx.gihtub.io/posts/</link>
+        <description>Recent content in Posts on jbltx&#39;s blog</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 10 Nov 2019 23:10:15 -0500</lastBuildDate>
+        <atom:link href="https://jbltx.gihtub.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>My First Post</title>
+            <link>https://jbltx.gihtub.io/posts/my-first-post/</link>
+            <pubDate>Sun, 10 Nov 2019 23:10:15 -0500</pubDate>
+            
+            <guid>https://jbltx.gihtub.io/posts/my-first-post/</guid>
+            <description> Test </description>
+            <content type="html"><![CDATA[
+
+<h1 id="test">Test</h1>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
