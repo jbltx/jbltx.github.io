@@ -2,30 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jbltx&#39;s blog</title>
-    <link>https://jbltx.github.io/</link>
+    <link>https://jbltx.com/</link>
     <description>Recent content on jbltx&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>jbltx.com</copyright>
     <lastBuildDate>Mon, 11 Nov 2019 01:03:03 -0500</lastBuildDate>
     
-	<atom:link href="https://jbltx.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jbltx.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://jbltx.github.io/about/</link>
+      <link>https://jbltx.com/about/</link>
       <pubDate>Mon, 11 Nov 2019 01:03:03 -0500</pubDate>
       
-      <guid>https://jbltx.github.io/about/</guid>
+      <guid>https://jbltx.com/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>My First Post</title>
-      <link>https://jbltx.github.io/posts/my-first-post/</link>
+      <link>https://jbltx.com/posts/my-first-post/</link>
       <pubDate>Sun, 10 Nov 2019 23:10:15 -0500</pubDate>
       
-      <guid>https://jbltx.github.io/posts/my-first-post/</guid>
+      <guid>https://jbltx.com/posts/my-first-post/</guid>
       <description> Test </description>
     </item>
     
