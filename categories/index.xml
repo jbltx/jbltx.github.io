@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on jbltx</title>
-    <link>https://www.jbltx.com/categories/</link>
+    <link>https://jbltx.com/categories/</link>
     <description>Recent content in Categories on jbltx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Copyright © 2019–2020, Mickael Bonfill and the Hugo Authors; all rights reserved.</copyright>
-    <lastBuildDate>Fri, 10 May 2019 23:10:15 -0500</lastBuildDate><atom:link href="https://www.jbltx.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 May 2019 23:10:15 -0500</lastBuildDate><atom:link href="https://jbltx.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Development</title>
-      <link>https://www.jbltx.com/categories/development/</link>
+      <link>https://jbltx.com/categories/development/</link>
       <pubDate>Fri, 10 May 2019 23:10:15 -0500</pubDate>
       
-      <guid>https://www.jbltx.com/categories/development/</guid>
+      <guid>https://jbltx.com/categories/development/</guid>
       <description></description>
     </item>
     
