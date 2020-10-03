@@ -104,7 +104,9 @@
     </nav>
 </header>
     <main class="main"><div class="profile">
-    <div class="profile_inner"><img src="/img/sun.png" alt="jbltx logo" />
+    <div class="profile_inner">
+        <!-- <img src="/img/sun.png" alt="jbltx logo" /> -->
+        <canvas id="sun" width="256" height="256"></canvas>
         <h1>Hey there, I&#39;m Mickael.</h1>
         <div class="social-icons">
             <a href="https://linkedin.com/in/mickaelbonfill" target="_blank" rel="noopener noreferrer"
@@ -235,6 +237,8 @@
         localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
     }
 </script>
+<script src="https://webglfundamentals.org/webgl/resources/webgl-utils.js"></script>
+<script src="./js/sun.js"></script>
 </body>
 
 </html>
