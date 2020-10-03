@@ -139,7 +139,9 @@
                 fragColor.ga = texture( iChannel0, uv ).ga;
                 fragColor.b  = texture( iChannel0, vec2(1.02, 1.010) * uv ).b;
                 
-                fragColor.rgb = mix(rgb(25.,18.,49.), fragColor.rgb, fragColor.a);
+                //vec3 bgColor = rgb(25.,18.,49.);
+                vec3 bgColor = rgb(10.,10.,10.);
+                fragColor.rgb = mix(bgColor, fragColor.rgb, fragColor.a);
                 
                 vec3 blur = gaussianBlur( iChannel1, gl_FragCoord.xy, iResolution, vec2(0.,1.) );
                 vec3 blurColor = rgb(250.0, 10.0, 160.0);
@@ -212,6 +214,7 @@
     var gl = null;
     var canvas = null;
     var frame = 0;
+    var vertexArray = null;
     var framebufferA = null;
     var textureA = null;
     var framebufferB = null;
@@ -221,17 +224,23 @@
     var imageProgram = null;
     var requestId = 0;
     var previous_time = 0;
+    const frameRate = 16; // 1s / 60Hz = 16ms
 
     canvas = document.getElementById('sun');
     canvas.addEventListener("webglcontextlost", handleContextLost, false);
     canvas.addEventListener("webglcontextrestored", handleContextRestored, false);
-    gl = canvas.getContext( 'webgl2', {antialias: true});
+    gl = canvas.getContext( 'webgl2', {antialias: true}) || canvas.getContext( 'experimental-webgl2', {antialias: true});
     init();
 
     function init()
     {
         if (gl === null)
            return;
+      
+        // dummy vertex array
+        vertexArray = gl.createVertexArray();
+        gl.bindVertexArray(vertexArray);
+        gl.bindVertexArray(null);
            
         bufferAProgram = createProgram(gl, vertexPlane, commonInclude + fragA);
         bufferBProgram = createProgram(gl, vertexPlane, commonInclude + fragB);
@@ -243,15 +252,15 @@
         textureA = createTexture(gl, gl.canvas.width, gl.canvas.height);   
         textureB = createTexture(gl, gl.canvas.width, gl.canvas.height);   
 
-        previous_time = Date.now() - 33;
-        animate();
+        previous_time = Date.now() - frameRate; // force render
+        requestId = requestAnimationFrame(animate);
     }
   
-    function animate()
+    function animate() 
     {
         var now = Date.now();
         var elapsed_time = now - previous_time;
-        if (elapsed_time >= 33) // 30Hz
+        if (elapsed_time >= frameRate)
         {
             draw(now);
             previous_time = Date.now();
@@ -288,6 +297,8 @@
             gl.uniform1f(gl.getUniformLocation(bufferAProgram, "iTime"), time);
             gl.uniform1i(gl.getUniformLocation(bufferAProgram, "iFrame"), frame);
             gl.uniform3f(gl.getUniformLocation(bufferAProgram, "iResolution"), gl.canvas.width, gl.canvas.height, 1.0);
+          
+            gl.bindVertexArray(vertexArray);
 
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         }
@@ -307,6 +318,8 @@
             gl.activeTexture(gl.TEXTURE0);
             gl.bindTexture(gl.TEXTURE_2D, textureA);
             gl.uniform1i(gl.getUniformLocation(bufferBProgram, "iChannel0"), 0);
+          
+            gl.bindVertexArray(vertexArray);
 
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         }
@@ -329,6 +342,8 @@
             gl.activeTexture(gl.TEXTURE1);
             gl.bindTexture(gl.TEXTURE_2D, textureB);
             gl.uniform1i(gl.getUniformLocation(imageProgram, "iChannel1"), 1);
+          
+            gl.bindVertexArray(vertexArray);
 
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         }            
