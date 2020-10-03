@@ -198,7 +198,7 @@
 
     function resize(canvas) 
     {
-        var cssToRealPixels = window.devicePixelRatio || 1;
+        var cssToRealPixels = 1;
         var displayWidth  = Math.floor(canvas.clientWidth  * cssToRealPixels);
         var displayHeight = Math.floor(canvas.clientHeight * cssToRealPixels);
 
