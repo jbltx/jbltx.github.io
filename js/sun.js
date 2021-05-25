@@ -205,6 +205,7 @@
         var resized = (canvas.width  !== displayWidth || canvas.height !== displayHeight);
         if (resized) 
         {
+            console.log("Resizing canvas from " + canvas.width + "px to " + displayWidth + "px (ratio " + cssToRealPixels + ")");
             canvas.width  = displayWidth;
             canvas.height = displayHeight;
         }
