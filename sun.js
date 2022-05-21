@@ -1,6 +1,6 @@
 // Script based on my project on shadertoy : https://www.shadertoy.com/view/WstyRl
 
-(function()
+window.addEventListener("load", function()
 {
     const vertexPlane = `#version 300 es  
 			void main()
@@ -359,4 +359,4 @@
         init();
     }
     
-})();
+});
